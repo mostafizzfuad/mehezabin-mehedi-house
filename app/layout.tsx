@@ -28,9 +28,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${manrope.className} antialiased`}>
 				<Navbar />
-				<div className="mx-auto px-4 sm:px-0 sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-6xl">
-					{children}
-				</div>
+				<div className="w-full max-w-6xl mx-auto px-4 lg:px-2">{children}</div>
 				<Footer />
 			</body>
 		</html>

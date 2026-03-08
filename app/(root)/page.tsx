@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,7 +6,11 @@ export const metadata: Metadata = {
 };
 
 const HomePage = () => {
-	return <div>HomePage</div>;
+	return (
+		<div>
+			<Hero />
+		</div>
+	);
 };
 
 export default HomePage;
