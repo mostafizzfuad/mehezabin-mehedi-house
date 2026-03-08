@@ -142,7 +142,7 @@ export const bestSellerProducts: ProductsType = [
 	{
 		id: 201,
 		name: "Hair Color 100gm",
-		price: 350.0,
+		price: 300.0,
 		images: [
 			"/products/hair-pack.jpg",
 			"/products/hair-review-1.jpg",
@@ -161,8 +161,8 @@ export const bestSellerProducts: ProductsType = [
 	},
 	{
 		id: 202,
-		name: "Hair Color 200gm",
-		price: 300.0,
+		name: "Hair Color 110gm",
+		price: 350.0,
 		images: [
 			"/products/hair-pack.jpg",
 			"/products/hair-review-1.jpg",
@@ -182,7 +182,7 @@ export const bestSellerProducts: ProductsType = [
 	{
 		id: 203,
 		name: "Magic Hair Serum 100ml",
-		price: 250.0,
+		price: 150.0,
 		images: [
 			"/products/hair-serum-100.jpg",
 			"/products/hair-review-2.jpg",
@@ -191,7 +191,7 @@ export const bestSellerProducts: ProductsType = [
 		],
 		categories: ["Hair Care", "Hair Pack"],
 		inStock: true,
-		badge: "200g",
+		badge: "100g",
 		rating: 4.6,
 		reviewsCount: 15,
 		shortDescription: ["Net Weight: 200g", "Deep conditioning treatment", "Repairs damaged and split ends"],
@@ -210,7 +210,7 @@ export const bestSellerProducts: ProductsType = [
 		],
 		categories: ["Henna Powder"],
 		inStock: true,
-		badge: "100g",
+		badge: "110g",
 		rating: 4.9,
 		reviewsCount: 35,
 		shortDescription: [
