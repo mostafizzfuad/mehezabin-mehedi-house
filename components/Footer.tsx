@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 
 export default function Footer() {
 	return (
-		<footer className="bg-[#132200] text-white pt-12 md:pt-16">
+		<footer className="bg-[#132200] text-white pt-12 md:pt-16 mt-4">
 			<div className="container mx-auto max-w-6xl px-4 lg:px-0">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
 					{/* ======================================= */}
