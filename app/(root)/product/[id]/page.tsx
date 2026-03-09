@@ -3,12 +3,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { FiMinus, FiPlus } from "react-icons/fi";
 import { FaStar, FaTruck, FaCreditCard, FaFacebookF, FaWhatsapp, FaEnvelope, FaLink, FaSearch } from "react-icons/fa";
 import { popularProducts, bestSellerProducts, randomProducts, featuredProducts } from "@/db/data";
 import { ProductType } from "@/lib/types";
 import SectionLayout from "@/components/SectionLayout";
 import ProductCard from "@/components/ProductCard";
+import ProductInteraction from "@/components/ProductInteraction";
 
 const getAllProducts = () => [...popularProducts, ...bestSellerProducts, ...randomProducts, ...featuredProducts];
 
@@ -180,28 +180,7 @@ export default function ProductPage() {
 					</div>
 
 					{/* Action Buttons (Quantity, Buy Now, Add to Cart) */}
-					<div className="flex flex-row gap-2 sm:gap-4 mb-2 border-b border-gray-200 pb-8 w-full">
-						{/* Quantity Selector */}
-						<div className="flex items-center border border-gray-200 rounded shrink-0 h-[46px]">
-							<button className="px-2 sm:px-4 text-gray-500 hover:text-[#68b800] transition h-full flex items-center justify-center cursor-pointer">
-								<FiMinus size={16} />
-							</button>
-							<span className="w-6 sm:w-10 text-center text-[14px] sm:text-[15px] font-medium text-black">
-								0
-							</span>
-							<button className="px-2 sm:px-4 text-[#68b800] hover:text-[#5b9f03] transition h-full flex items-center justify-center cursor-pointer">
-								<FiPlus size={16} />
-							</button>
-						</div>
-
-						{/* Buttons */}
-						<button className="flex-1 bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[13px] sm:text-[15px] h-[46px] rounded-full transition-colors shadow-sm cursor-pointer whitespace-nowrap">
-							Add to cart
-						</button>
-						<button className="flex-1 bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[13px] sm:text-[15px] h-[46px] rounded-full transition-colors shadow-sm cursor-pointer whitespace-nowrap">
-							Buy Now
-						</button>
-					</div>
+					<ProductInteraction product={product} />
 
 					{/* Meta Information (SKU, Categories, Socials) */}
 					<div className="flex flex-col gap-3 text-[13px]">
