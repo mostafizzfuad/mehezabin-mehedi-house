@@ -4,6 +4,7 @@ import Features from "@/components/Features";
 import SectionLayout from "@/components/SectionLayout";
 import ProductCard from "@/components/ProductCard";
 import { popularProducts, bestSellerProducts, randomProducts, featuredProducts } from "@/db/data";
+import Brands from "@/components/Brands";
 
 export const metadata: Metadata = {
 	title: "Home",
@@ -46,6 +47,8 @@ const HomePage = () => {
 					<ProductCard key={product.id} product={product} />
 				))}
 			</SectionLayout>
+
+			<Brands />
 		</div>
 	);
 };
