@@ -16,3 +16,22 @@ export type ProductType = {
 };
 
 export type ProductsType = ProductType[];
+
+// Cart
+export type CartItemType = ProductType & {
+	quantity: number;
+};
+
+export type CartItemsType = CartItemType[];
+
+// State Type
+export type CartStoreStateType = {
+	cart: CartItemsType;
+};
+
+// Actions Type
+export type CartStoreActionsType = {
+	addToCart: (product: CartItemType) => void;
+	removeFromCart: (product: CartItemType) => void;
+	clearCart: () => void;
+};

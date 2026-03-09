@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Search, ShoppingCart, Menu, ChevronDown, ChevronRight, X, CircleUser } from "lucide-react";
+import useCartStore from "@/store/cartStore";
 
 const categories = [
 	{ name: "Cellophane Paper" },
@@ -30,6 +31,8 @@ export default function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState("");
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isAllCategoriesOpen, setIsAllCategoriesOpen] = useState(false);
+	const { cart } = useCartStore();
+	const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
 	const isActive = (path: string) => pathname === path;
 
@@ -158,8 +161,8 @@ export default function Navbar() {
 									strokeWidth={2}
 									className="h-7 w-7 text-black hover:text-[#68b800] transition"
 								/>
-								<span className="absolute -top-1.5 md:-top-2 -right-1.5 md:-right-2 bg-[#d9534f] text-white text-[10px] font-bold w-4 h-4 md:w-5 md:h-5 flex items-center justify-center rounded-full md:border-2 md:border-white">
-									0
+								<span className="absolute -top-1.5 md:-top-2 -right-1.5 md:-right-2 bg-[#d9534f] text-white text-[10px] font-medium w-4 h-4 md:w-5 md:h-5 flex items-center justify-center rounded-full md:border-2 md:border-white">
+									{totalQuantity}
 								</span>
 							</Link>
 						</div>
@@ -203,7 +206,7 @@ export default function Navbar() {
 						<Link href="/cart" className="relative cursor-pointer">
 							<ShoppingCart strokeWidth={2} className="h-7 w-7 text-black" />
 							<span className="absolute -top-1.5 -right-1.5 bg-[#d9534f] text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
-								0
+								{totalQuantity}
 							</span>
 						</Link>
 					</div>

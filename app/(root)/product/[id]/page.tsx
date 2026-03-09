@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaStar, FaTruck, FaCreditCard, FaFacebookF, FaWhatsapp, FaEnvelope, FaLink, FaSearch } from "react-icons/fa";
+import { FaStar, FaTruck, FaCreditCard, FaFacebookF, FaWhatsapp, FaEnvelope, FaLink } from "react-icons/fa";
 import { popularProducts, bestSellerProducts, randomProducts, featuredProducts } from "@/db/data";
 import { ProductType } from "@/lib/types";
 import SectionLayout from "@/components/SectionLayout";

@@ -2,9 +2,13 @@
 import { useState } from "react";
 import { ProductType } from "@/lib/types";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import useCartStore from "@/store/cartStore";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function ProductInteraction({ product }: { product: ProductType }) {
 	const [quantity, setQuantity] = useState(1);
+	const router = useRouter();
 
 	const handleQuantityChange = (type: "increment" | "decrement") => {
 		if (type === "increment") {
@@ -14,6 +18,15 @@ export default function ProductInteraction({ product }: { product: ProductType }
 				setQuantity((prev) => prev - 1);
 			}
 		}
+	};
+
+	const { addToCart } = useCartStore();
+	const handleAddToCart = () => {
+		addToCart({
+			...product,
+			quantity,
+		});
+		toast.success(`${product.name} added to cart!`);
 	};
 
 	return (
@@ -36,10 +49,17 @@ export default function ProductInteraction({ product }: { product: ProductType }
 			</div>
 
 			{/* Buttons */}
-			<button className="flex-1 bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[13px] sm:text-[15px] h-[46px] rounded-full transition-colors shadow-sm cursor-pointer whitespace-nowrap">
+			<button
+				onClick={() => router.push("/checkout")}
+				className="flex-1 bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[13px] sm:text-[15px] h-[46px] rounded-full transition-colors shadow-sm cursor-pointer whitespace-nowrap"
+			>
 				Buy Now
 			</button>
-			<button className="flex-1 bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[13px] sm:text-[15px] h-[46px] rounded-full transition-colors shadow-sm cursor-pointer whitespace-nowrap">
+
+			<button
+				onClick={handleAddToCart}
+				className="flex-1 bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[13px] sm:text-[15px] h-[46px] rounded-full transition-colors shadow-sm cursor-pointer whitespace-nowrap"
+			>
 				Add to cart
 			</button>
 		</div>

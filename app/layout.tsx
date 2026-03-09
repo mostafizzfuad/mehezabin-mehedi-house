@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { APP_DESCRIPTION, APP_NAME, SERVER_URL } from "@/lib/constants";
+import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
 				<Navbar />
 				<div className="w-full max-w-6xl mx-auto px-4 lg:px-2">{children}</div>
 				<Footer />
+				<ToastContainer position="bottom-right" />
 			</body>
 		</html>
 	);
