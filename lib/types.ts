@@ -11,7 +11,7 @@ export type ProductType = {
 	rating?: number;
 	reviewsCount?: number;
 
-	shortDescription?: string[];
+	shortDescription: string;
 	longDescription?: string;
 };
 

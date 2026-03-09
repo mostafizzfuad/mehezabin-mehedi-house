@@ -16,11 +16,8 @@ export const popularProducts: ProductsType = [
 		badge: "25g",
 		rating: 4.5,
 		reviewsCount: 12,
-		shortDescription: [
-			"Net Wet : 25-27 gm (each cone)",
-			"Length : 7 Inch",
-			"BSTI certified 100% Halal Organic raw materials.",
-		],
+		shortDescription:
+			"BSTI Certified (CM & PCR) organic pffer henna cone — the best alternative to Kaveri and Prem Dulhan. Smooth texture, rich color, 25g weight. Minimum order 3 pieces. For non-bridal designs only.",
 		longDescription:
 			"Hand crafted henna paste is made with the highest quality ingredients available. We believe if you begin with an excellent ingredient you will have excellent results! And also making sure a completely halal and chemical free henna cone.",
 	},
@@ -39,13 +36,10 @@ export const popularProducts: ProductsType = [
 		badge: "20-22g",
 		rating: 5,
 		reviewsCount: 24,
-		shortDescription: [
-			"Net Wet : 20-22 gm (each cone)",
-			"Length : 6.5 Inch",
-			"Perfect for small and detailed designs.",
-		],
+		shortDescription:
+			"Net Weight: 200g \nLength : 6-6.5 Inch\nBSTI certified 100% Halal Organic raw materials and Organic Henna cone. Hand crafted henna paste is made with the highest quality ingredients available. We believe if you begin with an excellent ingredient you will have excellent results! And also making sure a completely halal and chemical free henna cone",
 		longDescription:
-			"Our small organic henna cones are perfect for quick applications and intricate, delicate designs. Hand crafted with 100% natural ingredients to ensure a rich and long-lasting stain without any harsh chemicals.",
+			"Our small organic henna cones are perfect for quick applications and intricate, delicate designs. Hand crafted with 100% natural ingredients to ensure a rich and long-lasting stain without any harsh chemicals. Ideal for beginners and casual users who want a reliable, high-quality henna experience.",
 	},
 	{
 		id: 103,
@@ -63,11 +57,7 @@ export const popularProducts: ProductsType = [
 		rating: 4.8,
 		reviewsCount: 45,
 		sku: "330aee",
-		shortDescription: [
-			"Net Wet : 25-26 gm (each cone)",
-			"Length : 7 Inch",
-			"BSTI certified 100% Halal Organic raw materials.",
-		],
+		shortDescription: "Net Wet : 25-27 gm (each cone)\nLength : 7 Inch\nBSTI certified 100% Halal Organic raw materials.",
 		longDescription:
 			"The medium-sized cone is our most popular choice, offering the perfect balance between quantity and ease of use. It is made with triple-sifted henna powder and premium essential oils for a stunning dark stain.",
 	},
@@ -86,7 +76,7 @@ export const popularProducts: ProductsType = [
 		badge: "32-33g",
 		rating: 5,
 		reviewsCount: 30,
-		shortDescription: ["Net Wet : 32-33 gm (each cone)", "Length : 8 Inch", "Ideal for heavy bridal designs."],
+		shortDescription: "Net Wet : 32-33 gm (each cone)\nLength : 8 Inch\nBSTI certified 100% Halal Organic raw materials.",
 		longDescription:
 			"Designed specifically for professional artists and bridal applications, this large henna cone contains extra paste so you do not have to switch cones frequently while working on heavy, elaborate designs.",
 	},
@@ -105,11 +95,7 @@ export const popularProducts: ProductsType = [
 		badge: "5 Cones",
 		rating: 4.9,
 		reviewsCount: 18,
-		shortDescription: [
-			"Includes 5 premium large cones",
-			"Comes with aftercare oil and sealant",
-			"100% natural and chemical free",
-		],
+		shortDescription: "Includes 5 large cones, henna sealant spray, and aftercare balm. Perfect for bridal artists looking for a complete package to achieve the darkest stain possible for their clients.",
 		longDescription:
 			"Make your special day even more memorable with our Premium Bridal Henna Set. This package includes 5 large organic cones, a bottle of henna sealant spray, and aftercare balm to ensure the darkest possible stain for your wedding.",
 	},
@@ -128,11 +114,7 @@ export const popularProducts: ProductsType = [
 		badge: "150g",
 		rating: 4.7,
 		reviewsCount: 8,
-		shortDescription: [
-			"Net Wet: 150g",
-			"Pure organic powder mixed with essential oils",
-			"Ready to use paste for cones or direct application",
-		],
+		shortDescription: "150g of ready-to-use organic mehedi paste in a convenient jar. Perfect for hair conditioning, coloring, and quick henna applications without the mess of cones.",
 		longDescription:
 			"Our organic mehedi paste comes in a convenient, airtight jar. It is perfectly mixed and ready to use. You can easily roll your own cones with this paste or use it directly for hair conditioning and coloring.",
 	},
@@ -155,7 +137,8 @@ export const bestSellerProducts: ProductsType = [
 		badge: "100 ML",
 		rating: 5,
 		reviewsCount: 50,
-		shortDescription: ["Volume: 100 ML", "Frizz control and shine enhancer", "Non-sticky, lightweight formula"],
+		shortDescription:
+			"Mix the powder with warm water. Use the mixture on your black or grey hair. Wait until your hair dries. After drying, wash it with water. Avoid using soap/shampoo on the 1st day. Ingredients: Natural henna leaf powder, manjishtha, ratanjore. উষ্ণ পানি দিয়ে পাউডারটি মিক্স করুন। মিশ্রণটি আপনার কালো বা পাকা চুলে ব্যবহার করুন। চুল শুকানো অবধি অপেক্ষা করুন। শুকানোর পর পানি দিয়ে ধুয়ে ফেলুন । ১ম দিন সাবান/শ্যাম্পু ব্যবহার থেকে বিরত থাকুন । উপাদান : প্রাকৃতিক মেহেদী পাতার গুড়া, মঞ্জিষ্ঠা, রতনজোর |",
 		longDescription:
 			"Experience the magic of nature with our organic hair serum. Infused with argan and jojoba extracts, it instantly tames frizz, adds a beautiful shine, and protects your hair from environmental damage without making it greasy.",
 	},
@@ -175,7 +158,7 @@ export const bestSellerProducts: ProductsType = [
 		badge: "110 ML",
 		rating: 4.8,
 		reviewsCount: 42,
-		shortDescription: ["Volume: 200 ML", "Reduces hair fall significantly", "Promotes new hair growth"],
+		shortDescription: "Apply a small amount to damp hair, focusing on mid-lengths and ends. Style as usual. Use daily for best results. Ingredients: Onion extract, castor oil, almond oil. ভেজা চুলে সামান্য পরিমাণে লাগান, বিশেষ করে মাঝখানে এবং শেষে। সাধারণভাবে স্টাইল করুন। সর্বোত্তম ফলাফলের জন্য প্রতিদিন ব্যবহার করুন। উপাদান: পেঁয়াজের রস, ক্যাস্টর তেল, বাদামের তেল |",
 		longDescription:
 			"A powerful blend of 15+ natural herbs and cold-pressed oils designed to stop hair fall and promote new hair growth. Massage gently onto the scalp twice a week for the best and most visible results.",
 	},
@@ -194,7 +177,7 @@ export const bestSellerProducts: ProductsType = [
 		badge: "100g",
 		rating: 4.6,
 		reviewsCount: 15,
-		shortDescription: ["Net Weight: 200g", "Deep conditioning treatment", "Repairs damaged and split ends"],
+		shortDescription: "Apply the pack to clean, damp hair. Leave it on for 30-45 minutes, then rinse thoroughly. Use once a week for best results. Ingredients: Amla, Shikakai, Bhringraj. পরিষ্কার, ভেজা চুলে প্যাকটি লাগান। ৩০-৪৫ মিনিট রেখে দিন, তারপর ভালো করে ধুয়ে ফেলুন। সর্বোত্তম ফলাফলের জন্য সপ্তাহে একবার ব্যবহার করুন। উপাদান: আমলা, শিকাকাই, ভৃঙ্গরাজ |",
 		longDescription:
 			"Revitalize your dull and damaged hair with our organic hair pack. Made with Amla, Shikakai, and Bhringraj, this pack acts as a deep conditioning treatment that strengthens roots and adds volume to your hair.",
 	},
@@ -208,16 +191,12 @@ export const bestSellerProducts: ProductsType = [
 			"/products/hair-review-3.png",
 			"/products/hair-review-4.png",
 		],
-		categories: ["Henna Powder"],
+		categories: ["Hair Care", "Hair Pack"],
 		inStock: true,
 		badge: "110g",
 		rating: 4.9,
 		reviewsCount: 35,
-		shortDescription: [
-			"Net Weight: 100g",
-			"Triple shifted extra fine powder",
-			"Perfect for hair dyeing and body art",
-		],
+		shortDescription: "Apply the pack to clean, damp hair. Leave it on for 30-45 minutes, then rinse thoroughly. Use once a week for best results. Ingredients: Amla, Shikakai, Bhringraj. পরিষ্কার, ভেজা চুলে প্যাকটি লাগান। ৩০-৪৫ মিনিট রেখে দিন, তারপর ভালো করে ধুয়ে ফেলুন। সর্বোত্তম ফলাফলের জন্য সপ্তাহে একবার ব্যবহার করুন। উপাদান: আমলা, শিকাকাই, ভৃঙ্গরাজ |",
 		longDescription:
 			"Our pure henna powder is triple-sifted to ensure a smooth, lump-free paste. Cultivated in the finest farms, it provides a rich reddish-brown tone for hair and a deep stain for body art. 100% natural.",
 	},
@@ -236,7 +215,7 @@ export const bestSellerProducts: ProductsType = [
 		badge: "150 ML",
 		rating: 4.5,
 		reviewsCount: 10,
-		shortDescription: ["Volume: 150 ML", "Enriched with Onion and Castor oil", "Strengthens hair follicles"],
+		shortDescription: "Massage 2-3 drops onto the scalp daily. For best results, use consistently for at least 3 months. Ingredients: Onion extract, Jamaican black castor oil. প্রতিদিন স্ক্যাল্পে ২-৩ ফোঁটা ম্যাসাজ করুন। সর্বোত্তম ফলাফলের জন্য কমপক্ষে ৩ মাস নিয়মিত ব্যবহার করুন। উপাদান: পেঁয়াজের রস, জ্যামাইকান ব্ল্যাক ক্যাস্টর তেল |",
 		longDescription:
 			"Say goodbye to hair thinning with our specialized Anti-Hairfall Oil Mix. Formulated with potent onion extract and Jamaican black castor oil, it deeply penetrates the scalp to awaken dormant hair follicles.",
 	},
@@ -255,9 +234,9 @@ export const bestSellerProducts: ProductsType = [
 		badge: "10g",
 		rating: 4.7,
 		reviewsCount: 22,
-		shortDescription: ["Net Wet: 10g", "Instant deep red color", "Chemical free and Wudu friendly"],
+		shortDescription: "Apply the paste to clean, dry nails. Leave it on for 1-2 hours, then gently scrape off. For best results, avoid water contact for 12 hours after application. Ingredients: Natural henna powder, essential oils. পরিষ্কার, শুকনো নখে পেস্টটি লাগান। ১-২ ঘণ্টা রেখে দিন, তারপর হালকাভাবে খোসা ছাড়িয়ে ফেলুন। সর্বোত্তম ফলাফলের জন্য প্রয়োগের ১২ ঘণ্টা জল সংস্পর্শ এড়িয়ে চলুন। উপাদান: প্রাকৃতিক মেহেদী গুঁড়া, এসেনশিয়াল তেল |",
 		longDescription:
-			"Get beautiful, vibrant red nails instantly with our premium nail cone. It is formulated with natural extracts to be completely safe for your nails while providing a long-lasting, water-permeable color.",
+			"Get beautiful, vibrant red nails instantly with our premium nail cone. It is formulated with natural extracts to be completely safe for your nails while providing a long-lasting, water-permeable color. Perfect for festivals and special occasions.",
 	},
 ];
 
@@ -271,7 +250,7 @@ export const randomProducts: ProductsType = [
 		inStock: true,
 		rating: 5,
 		reviewsCount: 11,
-		shortDescription: ["3 Medium Cones + 2 Large Cones", "Includes essential oil 10ml", "Perfect Eid gift package"],
+		shortDescription: "Includes 4 small cones and 1 nail cone. Perfect for quick, budget-friendly festival designs. 100% organic and chemical-free.",
 		longDescription:
 			"Celebrate Eid with our exclusive Combo 4 package. This bundle includes our best-selling medium and large cones along with a stain-enhancing essential oil, packed beautifully to serve as a perfect gift.",
 	},
@@ -284,7 +263,7 @@ export const randomProducts: ProductsType = [
 		inStock: true,
 		rating: 4.8,
 		reviewsCount: 25,
-		shortDescription: ["4 Small Cones + 1 Nail Cone", "Budget friendly festival pack", "100% Organic"],
+		shortDescription: "Includes 5 medium cones and a henna sealant spray. Ensures extra dark stain and long-lasting results. Great value for money.",
 		longDescription:
 			"The Eid Combo 1 is designed for personal use and quick application. With 4 organic small cones and 1 bright red nail cone, it provides everything you need to get festival-ready in no time.",
 	},
@@ -297,7 +276,7 @@ export const randomProducts: ProductsType = [
 		inStock: true,
 		rating: 5,
 		reviewsCount: 19,
-		shortDescription: ["5 Medium Cones + Henna Sealant", "Ensures extra dark stain", "Great value for money"],
+		shortDescription: "Includes 5 large cones and a henna sealant spray. Perfect for bridal artists and heavy designs. Provides the darkest stain possible with proper aftercare.",
 		longDescription:
 			"Maximize your henna stain with Eid Combo 2. The included henna sealant spray locks the dried paste onto your skin, allowing it to stay on longer and develop an incredibly deep, rich color.",
 	},
@@ -310,7 +289,7 @@ export const randomProducts: ProductsType = [
 		inStock: true,
 		rating: 4.9,
 		reviewsCount: 33,
-		shortDescription: ["6 Large Cones + Aftercare Balm", "Ideal for families", "Premium quality paste"],
+		shortDescription: "Includes 6 large cones, henna sealant spray, and aftercare balm. The ultimate package for heavy designs and bridal applications. Ensures the darkest stain with proper use.",
 		longDescription:
 			"Got a big family to decorate this Eid? Combo 3 offers 6 large cones that are sufficient for multiple heavy designs. The protective aftercare balm ensures your stain is protected from water and fades slower.",
 	},
@@ -324,11 +303,7 @@ export const randomProducts: ProductsType = [
 		badge: "Save 10%",
 		rating: 4.6,
 		reviewsCount: 7,
-		shortDescription: [
-			"Includes Hair Oil, Serum & Hair Pack",
-			"Complete organic hair routine",
-			"Stops hair fall & adds shine",
-		],
+		shortDescription: "Includes herbal hair oil, organic hair pack, and hair serum. A complete 3-step routine for nourishing, repairing, and adding shine to your hair. Perfect for all hair types.",
 		longDescription:
 			"Transform your hair with our Ultimate Hair Care Combo. This three-step routine includes our herbal hair oil for nourishment, the organic hair pack for repair, and the hair serum for that perfect finishing shine.",
 	},
@@ -342,11 +317,7 @@ export const randomProducts: ProductsType = [
 		badge: "Best Value",
 		rating: 5,
 		reviewsCount: 14,
-		shortDescription: [
-			"10 Large Cones + 2 Essential Oils + Balm",
-			"Professional artist bundle",
-			"Guaranteed dark mahogany stain",
-		],
+		shortDescription: "Includes 10 large cones, henna sealant spray, aftercare balm, and a detailed bridal design guide. The ultimate arsenal for any bridal henna artist. This massive package includes everything needed to execute flawless, dark-staining bridal artwork that will leave the bride and guests amazed.",
 		longDescription:
 			"The ultimate arsenal for any bridal henna artist. This massive package includes everything needed to execute flawless, dark-staining bridal artwork that will leave the bride and guests amazed.",
 	},
@@ -361,11 +332,7 @@ export const featuredProducts: ProductsType = [
 		categories: ["Accessories"],
 		inStock: false,
 		badge: "1 Sheet",
-		shortDescription: [
-			"Reusable Arabic design sticker",
-			"Easy peel-and-stick application",
-			"Perfect for beginners",
-		],
+		shortDescription: "50 pre-cut cellophane sheets for easy cone rolling. Transparent, flexible, and strong to prevent paste leakage. Perfect for DIY henna artists.",
 		longDescription:
 			"Achieve professional-looking henna designs at home without any artistic skills. Simply stick the stencil onto your hand, apply the henna paste over it, wait for it to dry, and peel off for a flawless pattern.",
 	},
@@ -381,16 +348,12 @@ export const featuredProducts: ProductsType = [
 		categories: ["Oil"],
 		inStock: false,
 		badge: "50 ML",
-		shortDescription: [
-			"100% Pure Essential Tea Tree Oil",
-			"Enhances mehedi stain darkness",
-			"Aromatic and safe for skin",
-		],
+		shortDescription: "Premium Eucalyptus extract. Darkens henna stain naturally. Refreshing and cooling sensation. Perfect for mixing with henna paste or using as a post-application treatment.",
 		longDescription:
 			"Add a few drops of our pure essential tea tree oil to your homemade henna paste. The active terpineols in the oil react with the lawsone dye in henna to drastically darken the stain.",
 	},
 	{
-		id: 103,
+		id: 403,
 		name: "Organic Henna Cone - Medium",
 		price: 120.0,
 		images: [
@@ -405,11 +368,7 @@ export const featuredProducts: ProductsType = [
 		rating: 4.8,
 		reviewsCount: 45,
 		sku: "330aee",
-		shortDescription: [
-			"Net Wet : 25-26 gm (each cone)",
-			"Length : 7 Inch",
-			"BSTI certified 100% Halal Organic raw materials.",
-		],
+		shortDescription: "Net Wet : 25-27 gm (each cone)\nLength : 7 Inch\nBSTI certified 100% Halal Organic raw materials.",
 		longDescription:
 			"The medium-sized cone is our most popular choice, offering the perfect balance between quantity and ease of use. It is made with triple-sifted henna powder and premium essential oils for a stunning dark stain.",
 	},
@@ -421,11 +380,7 @@ export const featuredProducts: ProductsType = [
 		categories: ["Perfume", "Oil"],
 		inStock: false,
 		badge: "30 ML",
-		shortDescription: [
-			"Premium Eucalyptus extract",
-			"Darkens henna stain naturally",
-			"Refreshing and cooling sensation",
-		],
+		shortDescription: "Bridal box with 30ml of premium Eucalyptus essential oil. The traditional secret ingredient used by professionals to achieve a dark, rich, and long-lasting henna stain.",
 		longDescription:
 			"Our premium Eucalyptus oil is extracted using the finest steam distillation methods. It is the traditional secret ingredient used by professionals to achieve a dark, rich, and long-lasting henna stain.",
 	},
@@ -443,7 +398,7 @@ export const featuredProducts: ProductsType = [
 		inStock: true,
 		rating: 4.5,
 		reviewsCount: 5,
-		shortDescription: ["Heavy duty plastic material", "Ultra-sharp cutting blade", "Holds standard tape sizes"],
+		shortDescription: "A durable and handy tape dispenser for all your packaging, crafting, and cone-rolling needs. Features a sharp, rust-resistant blade for clean and easy cuts, saving you time and effort.",
 		longDescription:
 			"A durable and handy tape dispenser for all your packaging, crafting, and cone-rolling needs. Features a sharp, rust-resistant blade for clean and easy cuts, saving you time and effort.",
 	},
@@ -462,11 +417,7 @@ export const featuredProducts: ProductsType = [
 		badge: "1 Roll",
 		rating: 4.8,
 		reviewsCount: 16,
-		shortDescription: [
-			"Pre-cut cello sheets for cone rolling",
-			"Transparent & highly flexible",
-			"Prevents paste leakage",
-		],
+		shortDescription: "High-quality cellophane paper roll for DIY henna cone making. Flexible yet strong material prevents bursting during heavy squeezing. Perfect for artists who prefer rolling their own cones.",
 		longDescription:
 			"Create your own perfect, pin-hole sized henna cones with our high-quality cellophane paper rolls. The material is sufficiently flexible to roll tight tips, yet strong enough to prevent bursting during heavy squeezing.",
 	},
