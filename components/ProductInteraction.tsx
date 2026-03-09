@@ -26,9 +26,7 @@ export default function ProductInteraction({ product }: { product: ProductType }
 				>
 					<FiMinus size={16} />
 				</button>
-				<span className="w-6 sm:w-10 text-center text-[16px] font-medium text-black">
-					{quantity}
-				</span>
+				<span className="w-6 sm:w-10 text-center text-[16px] font-medium text-black">{quantity}</span>
 				<button
 					onClick={() => handleQuantityChange("increment")}
 					className="px-2 sm:px-4 text-[#68b800] hover:text-[#5b9f03] transition h-full flex items-center justify-center cursor-pointer"
@@ -39,10 +37,10 @@ export default function ProductInteraction({ product }: { product: ProductType }
 
 			{/* Buttons */}
 			<button className="flex-1 bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[13px] sm:text-[15px] h-[46px] rounded-full transition-colors shadow-sm cursor-pointer whitespace-nowrap">
-				Add to cart
+				Buy Now
 			</button>
 			<button className="flex-1 bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[13px] sm:text-[15px] h-[46px] rounded-full transition-colors shadow-sm cursor-pointer whitespace-nowrap">
-				Buy Now
+				Add to cart
 			</button>
 		</div>
 	);
