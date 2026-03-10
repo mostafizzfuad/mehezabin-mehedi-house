@@ -27,6 +27,13 @@ const useCartStore = create<CartStoreStateType & CartStoreActionsType>()(
 					cart: state.cart.filter((cartProduct) => cartProduct.id !== product.id),
 				})),
 
+			updateQuantity: (id, quantity) =>
+				set((state) => ({
+					cart: state.cart.map((item) =>
+						item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item,
+					),
+				})),
+
 			clearCart: () => set({ cart: [] }),
 		}),
 		{

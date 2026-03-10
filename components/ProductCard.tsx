@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductType } from "@/lib/types";
 import useCartStore from "@/store/cartStore";
-import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
 export default function ProductCard({ product }: { product: ProductType }) {
@@ -16,7 +15,7 @@ export default function ProductCard({ product }: { product: ProductType }) {
 			...product,
 			quantity: 1,
 		});
-		toast.success(`${product.name} added to cart!`);
+		router.push(`/cart?added=true&name=${encodeURIComponent(product.name)}`);
 	};
 
 	return (
