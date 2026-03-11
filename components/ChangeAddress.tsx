@@ -123,7 +123,7 @@ export default function ChangeAddress({
 						<input
 							type="text"
 							{...register("city")}
-							placeholder="e.g. Mirpur, Gulshan"
+							placeholder="e.g. Road 5, Cha Block, Mirpur 2"
 							className={`w-full border rounded px-3 py-2 text-[14px] text-gray-700 outline-none transition ${
 								errors.city
 									? "border-red-500 focus:border-red-500 bg-red-50/10"
