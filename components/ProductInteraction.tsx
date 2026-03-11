@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 export default function ProductInteraction({ product }: { product: ProductType }) {
 	const [quantity, setQuantity] = useState(1);
 	const router = useRouter();
+	const isOutOfStock = product.inStock === false;
 
 	const handleQuantityChange = (type: "increment" | "decrement") => {
 		if (type === "increment") {
@@ -27,6 +28,14 @@ export default function ProductInteraction({ product }: { product: ProductType }
 		});
 		router.push(`/cart?added=true&name=${encodeURIComponent(product.name)}`);
 	};
+
+	if (isOutOfStock) {
+		return (
+			<div className="mb-6 border-b border-gray-200 pb-6">
+				<p className="text-red-500 font-medium text-[15px]">Out of stock</p>
+			</div>
+		);
+	}
 
 	return (
 		<div className="flex flex-row gap-2 sm:gap-4 mb-2 border-b border-gray-200 pb-8 w-full">
