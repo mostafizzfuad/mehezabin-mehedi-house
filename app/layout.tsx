@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope, Geist } from "next/font/google";
 import "./globals.css";
 import { APP_DESCRIPTION, APP_NAME, SERVER_URL } from "@/lib/constants";
 import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const manrope = Manrope({
 	variable: "--font-geist-sans",
@@ -26,7 +29,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className={cn("font-sans", geist.variable)}>
 			<body className={`${manrope.className} antialiased`}>
 				<Navbar />
 				<div className="w-full max-w-6xl mx-auto px-4 lg:px-2">{children}</div>

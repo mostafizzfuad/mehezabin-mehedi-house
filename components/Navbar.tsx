@@ -6,6 +6,7 @@ import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Search, ShoppingCart, Menu, ChevronDown, ChevronRight, X, CircleUser } from "lucide-react";
 import useCartStore from "@/store/cartStore";
+import CartSheet from "@/components/CartSheet";
 
 const categories = [
 	{ name: "Cellophane Paper" },
@@ -156,15 +157,7 @@ export default function Navbar() {
 									className="h-7 w-7 text-black hover:text-[#68b800] transition"
 								/>
 							</Link>
-							<Link href="/cart" className="relative cursor-pointer">
-								<ShoppingCart
-									strokeWidth={2}
-									className="h-7 w-7 text-black hover:text-[#68b800] transition"
-								/>
-								<span className="absolute -top-1.5 md:-top-2 -right-1.5 md:-right-2 bg-[#d9534f] text-white text-[10px] font-medium w-4 h-4 md:w-5 md:h-5 flex items-center justify-center rounded-full md:border-2 md:border-white">
-									{totalQuantity}
-								</span>
-							</Link>
+							<CartSheet />
 						</div>
 					</div>
 				</div>
