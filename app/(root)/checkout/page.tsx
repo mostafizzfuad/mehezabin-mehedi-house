@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Form } from "@/components/ui/form";
 import BillingDetails from "@/components/BillingDetails";
+import OrderSummary from "@/components/OrderSummary";
 
 // Zod Validation Schema
 const checkoutSchema = z.object({
@@ -112,6 +113,15 @@ export default function CheckoutPage() {
 						shippingCost={shippingCost}
 						setShippingCost={setShippingCost}
 						selectedDistrict={selectedDistrict}
+					/>
+
+					{/* Order Summary (Right Side) */}
+					<OrderSummary
+						cart={cart}
+						removeFromCart={removeFromCart}
+						subtotal={subtotal}
+						shippingCost={shippingCost}
+						total={total}
 					/>
 				</form>
 			</Form>
