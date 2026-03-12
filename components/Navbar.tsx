@@ -151,7 +151,7 @@ export default function Navbar() {
 
 						{/* Icons (User & Cart) */}
 						<div className="flex items-center gap-4 shrink-0">
-							<Link href="/profile" className="cursor-pointer">
+							<Link href="/my-account" className="cursor-pointer">
 								<CircleUser
 									strokeWidth={2}
 									className="h-7 w-7 text-black hover:text-[#68b800] transition"
@@ -193,15 +193,10 @@ export default function Navbar() {
 
 					{/* Icons (Right) */}
 					<div className="flex-1 flex justify-end items-center gap-4">
-						<Link href="/profile" className="cursor-pointer">
+						<Link href="/my-account" className="cursor-pointer">
 							<CircleUser strokeWidth={2} className="h-7 w-7 text-black" />
 						</Link>
-						<Link href="/cart" className="relative cursor-pointer">
-							<ShoppingCart strokeWidth={2} className="h-7 w-7 text-black" />
-							<span className="absolute -top-1.5 -right-1.5 bg-[#d9534f] text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
-								{totalQuantity}
-							</span>
-						</Link>
+						<CartSheet />
 					</div>
 				</div>
 

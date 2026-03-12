@@ -90,7 +90,7 @@ export default function OrderSummary({ cart, removeFromCart, subtotal, shippingC
 				{/* Place Order Button */}
 				<button
 					type="submit"
-					className="flex items-center justify-center gap-2 w-full bg-[#68b800] hover:bg-[#5b9f03] text-white font-medium text-[16px] h-[52px] rounded-full transition-colors shadow-sm cursor-pointer"
+					className="flex items-center justify-center gap-2 w-full bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[16px] h-[52px] rounded-full transition-colors shadow-sm cursor-pointer"
 				>
 					<FaLock size={14} /> Place Order ৳ {total.toFixed(2)}
 				</button>
