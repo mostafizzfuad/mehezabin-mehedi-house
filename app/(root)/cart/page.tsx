@@ -15,7 +15,7 @@ export default function CartPage() {
 	const [showAddressForm, setShowAddressForm] = useState(false);
 	const [shippingAddress, setShippingAddress] = useState({
 		district: "Dhaka",
-		city: "",
+		address: "",
 		postcode: "",
 	});
 
@@ -69,7 +69,7 @@ export default function CartPage() {
 					<h2 className="text-2xl font-semibold text-gray-700 mb-6">Your cart is currently empty.</h2>
 					<Link
 						href="/shop"
-						className="inline-block bg-[#68b800] text-white px-8 py-3 rounded-full font-medium hover:bg-[#5b9f03] transition"
+						className="inline-block bg-[#68b800] text-white px-8 py-3 rounded-full font-medium hover:bg-[#b8a200] transition"
 					>
 						Return to shop
 					</Link>
@@ -89,7 +89,7 @@ export default function CartPage() {
 							</div>
 							<Link
 								href="/shop"
-								className="bg-[#68b800] text-white text-[13px] px-5 py-2 rounded-full font-medium hover:bg-[#5b9f03] transition whitespace-nowrap"
+								className="bg-[#68b800] text-white text-[13px] px-5 py-2 rounded-full font-medium hover:bg-[#b8a200] transition whitespace-nowrap"
 							>
 								Continue Shopping
 							</Link>
@@ -101,66 +101,74 @@ export default function CartPage() {
 						<CartTable cart={cart} removeFromCart={removeFromCart} updateQuantity={updateQuantity} />
 
 						{/* RIGHT: Cart Totals */}
-						<div className="w-full lg:w-[400px] border border-gray-200 p-6 md:p-8 bg-[#fafafa]">
+						<div className="w-full lg:w-[400px] border border-gray-200 p-6 md:p-8 bg-[#fafafa] rounded-lg shadow-sm">
 							<h2 className="text-2xl font-bold text-black mb-6">Cart totals</h2>
 
-							<div className="flex justify-between items-center border-b border-gray-200 pb-4 mb-4">
-								<span className="text-[15px] text-gray-600">Subtotal</span>
-								<span className="text-[15px] text-gray-800 font-medium">৳ {subtotal.toFixed(2)}</span>
+							<div className="flex justify-between items-center border-b border-gray-200 pb-4 mb-6">
+								<span className="text-[15px] font-semibold text-gray-800">Subtotal</span>
+								<span className="text-[15px] font-semibold text-gray-800">৳ {subtotal.toFixed(2)}</span>
 							</div>
 
-							<div className="flex justify-between items-start border-b border-gray-200 pb-4 mb-6">
-								<span className="text-[15px] text-gray-600 mt-1">Shipping</span>
+							<div className="flex flex-col border-b border-gray-200 pb-4 mb-6">
+								<span className="text-[15px] font-semibold text-gray-800 mb-4">Shipping</span>
 
-								<div className="flex flex-col items-end gap-3 w-full max-w-[220px]">
-									{/* Inside Dhaka Radio */}
-									<label className="flex items-center gap-2 cursor-pointer group">
-										<input
-											type="radio"
-											name="shipping"
-											value="60"
-											checked={shippingCost === 60}
-											onChange={() => setShippingCost(60)}
-											className="accent-[#68b800] w-3.5 h-3.5 cursor-pointer"
-										/>
-										<span className="text-[14px] text-gray-700 group-hover:text-black transition">
-											Inside Dhaka: <span className="font-semibold">৳ 60.00</span>
-										</span>
-									</label>
+								<div className="flex flex-col gap-3 w-full">
+									<div className="border border-gray-200 rounded-md bg-white">
+										<label className="flex items-center justify-between p-4 border-b border-gray-200 cursor-pointer group hover:bg-gray-50 transition rounded-t-md">
+											<div className="flex items-center gap-3">
+												<input
+													type="radio"
+													name="cartShipping"
+													value="60"
+													checked={shippingCost === 60}
+													onChange={() => setShippingCost(60)}
+													className="accent-[#68b800] w-4 h-4 cursor-pointer"
+												/>
+												<span className="text-[14px] text-gray-700 font-medium">
+													Inside Dhaka:
+												</span>
+											</div>
+											<span className="text-[14px] font-medium text-black">৳ 60.00</span>
+										</label>
 
-									{/* Outside Dhaka Radio */}
-									<label className="flex items-center gap-2 cursor-pointer group">
-										<input
-											type="radio"
-											name="shipping"
-											value="120"
-											checked={shippingCost === 120}
-											onChange={() => setShippingCost(120)}
-											className="accent-[#68b800] w-3.5 h-3.5 cursor-pointer"
-										/>
-										<span className="text-[14px] text-gray-700 group-hover:text-black transition">
-											Outside Dhaka: <span className="font-semibold">৳ 120.00</span>
-										</span>
-									</label>
+										<label className="flex items-center justify-between p-4 cursor-pointer group hover:bg-gray-50 transition rounded-b-md">
+											<div className="flex items-center gap-3">
+												<input
+													type="radio"
+													name="cartShipping"
+													value="120"
+													checked={shippingCost === 120}
+													onChange={() => setShippingCost(120)}
+													className="accent-[#68b800] w-4 h-4 cursor-pointer"
+												/>
+												<span className="text-[14px] text-gray-700 font-medium">
+													Outside Dhaka:
+												</span>
+											</div>
+											<span className="text-[14px] font-medium text-black">৳ 120.00</span>
+										</label>
+									</div>
 
 									{/* Change Address Component */}
-									<ChangeAddress
-										currentAddress={shippingAddress}
-										onUpdateAddress={(newAddress) => setShippingAddress(newAddress)}
-										showAddressForm={showAddressForm}
-										setShowAddressForm={setShowAddressForm}
-									/>
+									<div className="mt-2 w-full">
+										<ChangeAddress
+											currentAddress={shippingAddress}
+											onUpdateAddress={(newAddress) => setShippingAddress(newAddress)}
+											showAddressForm={showAddressForm}
+											setShowAddressForm={setShowAddressForm}
+										/>
+									</div>
 								</div>
 							</div>
 
 							<div className="flex justify-between items-center mb-8">
-								<span className="text-[16px] text-gray-800 font-medium">Total</span>
-								<span className="text-[18px] text-black font-bold">৳ {total.toFixed(2)}</span>
+								<span className="text-[16px] text-black font-bold">Total</span>
+								<span className="text-[20px] text-black font-bold">৳ {total.toFixed(2)}</span>
 							</div>
 
 							<Link
 								href="/checkout"
-								className="flex items-center justify-center w-full bg-[#68b800] hover:bg-[#b8a200] text-white font-medium text-[16px] h-[40px] sm:h-[48px] rounded-full transition-colors shadow-sm cursor-pointer"
+								className="flex items-center justify-center w-full bg-[#68b800] hover:bg-[#b8a200] active:scale-[0.98] text-white font-medium text-[16px] h-[56px] rounded-full transition-all shadow-md cursor-pointer"
 							>
 								Proceed To Checkout
 							</Link>
