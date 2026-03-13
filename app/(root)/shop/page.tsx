@@ -21,13 +21,25 @@ function ShopContent() {
 	// Get URL Params
 	const orderBy = searchParams.get("orderby") || "menu_order";
 	const currentPage = parseInt(searchParams.get("page") || "1", 10);
+	const searchQuery = searchParams.get("search") || ""; // Search query from URL
 
 	useEffect(() => {
 		setMounted(true);
 	}, []);
 
+	// Search Filter Logic
+	let filteredProducts = [...allProducts];
+	if (searchQuery) {
+		const query = searchQuery.toLowerCase();
+		filteredProducts = filteredProducts.filter(
+			(product) =>
+				product.name.toLowerCase().includes(query) ||
+				product.categories.some((cat) => cat.toLowerCase().includes(query)),
+		);
+	}
+
 	// Sorting Logic
-	let sortedProducts = [...allProducts];
+	let sortedProducts = [...filteredProducts]; // Sort the filtered products
 	switch (orderBy) {
 		case "popularity":
 			sortedProducts.sort((a, b) => (b.reviewsCount || 0) - (a.reviewsCount || 0));
@@ -88,38 +100,63 @@ function ShopContent() {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
+	// If user clears the search query but leaves the page param, etc.
+	const clearSearch = () => {
+		const params = new URLSearchParams(searchParams.toString());
+		params.delete("search");
+		params.delete("page"); // Reset to page 1
+		router.push(`/shop${params.toString() ? `?${params.toString()}` : ""}`);
+	};
+
 	if (!mounted) return null;
 
 	return (
 		<div className="w-full pb-16 md:pb-24">
 			{/* Page Header */}
 			<div className="bg-[#f9fdf5] py-14 md:py-16 text-center border-b border-gray-100 mb-10 md:mb-16">
-				<h1 className="text-4xl md:text-[50px] font-bold text-black mb-4">Shop</h1>
+				<h1 className="text-4xl md:text-[50px] font-bold text-black mb-4">
+					{searchQuery ? `Search Results for "${searchQuery}"` : "Shop"}
+				</h1>
 				<div className="text-[14px] font-medium flex items-center justify-center gap-2">
 					<Link href="/" className="text-[#68b800] hover:text-[#5b9f03] transition cursor-pointer">
 						Home
 					</Link>
 					<span className="text-gray-500">/</span>
-					<span className="text-black">Shop</span>
+					<span className="text-black">{searchQuery ? "Search" : "Shop"}</span>
 				</div>
 			</div>
 
 			<div className="container mx-auto max-w-6xl px-4 lg:px-0">
+				{/* Search clear alert if searching */}
+				{searchQuery && (
+					<div className="flex items-center justify-between bg-blue-50 text-blue-800 p-4 rounded-md mb-8 border border-blue-100">
+						<p>
+							Found {totalItems} result(s) matching <strong>"{searchQuery}"</strong>
+						</p>
+						<button
+							onClick={clearSearch}
+							className="text-sm font-semibold underline hover:text-blue-900 cursor-pointer"
+						>
+							Clear Search
+						</button>
+					</div>
+				)}
+
 				{/* Toolbar: Results Count & Sorting */}
 				<div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
 					<p className="text-gray-600 text-[14px] md:text-[15px]">
-						Showing {startIndex + 1}–{endIndex} of {totalItems} results
+						Showing {totalItems > 0 ? startIndex + 1 : 0}–{endIndex} of {totalItems} results
 					</p>
 
 					<div className="w-full sm:w-[220px]">
 						<Select value={orderBy} onValueChange={handleSortChange}>
-							<SelectTrigger className="w-full border-none shadow-none text-gray-600 text-[14px] md:text-[15px] focus:ring-0 focus:ring-offset-0 bg-transparent h-auto p-0 justify-end gap-2 hover:text-black">
+							<SelectTrigger className="w-full border-none shadow-none text-gray-600 text-[14px] md:text-[15px] focus:ring-0 focus:ring-offset-0 bg-transparent h-auto p-0 justify-end gap-2 hover:text-black cursor-pointer">
 								<SelectValue placeholder="Default sorting" />
 							</SelectTrigger>
 							<SelectContent
 								position="popper"
 								align="end"
-								className="bg-white border border-gray-200 shadow-md w-[220px] rounded-none"
+								className="bg-white border border-gray-200 shadow-md w-[220px] rounded-none z-[100]"
 							>
 								<SelectItem
 									value="menu_order"
@@ -167,7 +204,9 @@ function ShopContent() {
 					{currentProducts.length > 0 ? (
 						currentProducts.map((product) => <ProductCard key={product.id} product={product} />)
 					) : (
-						<div className="col-span-full py-20 text-center text-gray-500 text-lg">No products found.</div>
+						<div className="col-span-full py-20 text-center text-gray-500 text-lg">
+							No products found matching your search.
+						</div>
 					)}
 				</div>
 

@@ -4,8 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Search, Menu, ChevronDown, ChevronRight, X, CircleUser } from "lucide-react";
+import { Menu, ChevronDown, ChevronRight, X, CircleUser } from "lucide-react";
 import CartSheet from "@/components/CartSheet";
+import SearchBar from "@/components/SearchBar";
 
 const categories = [
 	{ name: "Cellophane Paper" },
@@ -144,16 +145,8 @@ export default function Navbar() {
 
 					{/* Right Section: Search Bar & Icons */}
 					<div className="flex items-center gap-4 xl:gap-6 px-0 md:px-3 flex-1 justify-end lg:flex-none">
-						<div className="hidden md:flex flex-1 lg:flex-none lg:w-[280px] xl:w-[350px] items-center border border-gray-300 rounded overflow-hidden bg-white focus-within:border-[#68b800] transition mx-4 lg:mx-0">
-							<input
-								type="text"
-								placeholder="Search on products"
-								className="w-full px-4 py-2 text-sm outline-none text-gray-700"
-							/>
-							<button className="bg-[#68b800] hover:bg-[#5fa51d] p-2.5 text-white transition cursor-pointer">
-								<Search className="h-5 w-5" />
-							</button>
-						</div>
+						{/* Desktop Search Bar Component */}
+						<SearchBar categories={categories} isMobile={false} />
 
 						{/* Icons (User & Cart) */}
 						<div className="flex items-center gap-4 shrink-0">
@@ -209,18 +202,9 @@ export default function Navbar() {
 				{/* ========================================== */}
 				{/* BOTTOM SEARCH BAR (Visible on sm or below) */}
 				{/* ========================================== */}
-				<div className="flex md:hidden w-full pb-4">
-					<div className="flex w-full items-center border border-gray-300 rounded overflow-hidden bg-white focus-within:border-[#68b800] transition">
-						<input
-							type="text"
-							placeholder="Search on products"
-							className="w-full px-4 py-2 text-sm outline-none text-gray-700"
-						/>
-						<button className="bg-[#68b800] hover:bg-[#5fa51d] px-4 py-2 text-white transition cursor-pointer">
-							<Search className="h-5 w-5" />
-						</button>
-					</div>
-				</div>
+
+				{/* Mobile Search Bar Component */}
+				<SearchBar categories={categories} isMobile={true} onCloseMobileMenu={() => setIsMenuOpen(false)} />
 
 				{/* =========================================== */}
 				{/* MOBILE & TABLET DROPDOWN MENU (Slides Down) */}
