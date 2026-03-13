@@ -5,6 +5,7 @@ export type ProductType = {
 	images: string[];
 	categories: string[];
 	inStock: boolean;
+	date: string;
 
 	badge?: string;
 	sku?: string;
