@@ -18,8 +18,8 @@ export default function CartSheet() {
 	if (!mounted) return null;
 
 	// Calculate totals
-	const cartCount = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
-	const subtotal = cart.reduce((acc, item) => acc + item.price * (item.quantity || 1), 0);
+	const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+	const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
 	return (
 		<Sheet>

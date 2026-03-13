@@ -4,8 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Search, ShoppingCart, Menu, ChevronDown, ChevronRight, X, CircleUser } from "lucide-react";
-import useCartStore from "@/store/cartStore";
+import { Search, Menu, ChevronDown, ChevronRight, X, CircleUser } from "lucide-react";
 import CartSheet from "@/components/CartSheet";
 
 const categories = [
@@ -26,16 +25,20 @@ const categories = [
 	{ name: "Tape Dispenser" },
 ];
 
+// Helper function to generate slug from category name
+const getCategorySlug = (name: string) => name.toLowerCase().replace(/ /g, "-");
+
 export default function Navbar() {
 	const pathname = usePathname();
 	const router = useRouter();
 	const [mobileMenuOpen, setMobileMenuOpen] = useState("");
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isAllCategoriesOpen, setIsAllCategoriesOpen] = useState(false);
-	const { cart } = useCartStore();
-	const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
+	// Active Link Helpers
 	const isActive = (path: string) => pathname === path;
+	const isAnyCategoryActive = pathname.startsWith("/category");
+	const isCategoryActive = (name: string) => pathname === `/category/${getCategorySlug(name)}`;
 
 	return (
 		<header className="w-full border-b border-gray-200 bg-white relative z-50">
@@ -75,7 +78,11 @@ export default function Navbar() {
 
 							{/* All Categories Dropdown */}
 							<div className="relative group/main">
-								<button className="flex items-center gap-1 hover:text-[#68b800] transition py-3 cursor-pointer text-black group-hover/main:text-[#68b800]">
+								<button
+									className={`flex items-center gap-1 transition py-3 cursor-pointer group-hover/main:text-[#68b800] ${
+										isAnyCategoryActive ? "text-[#68b800]" : "text-black"
+									}`}
+								>
 									All Categories <ChevronDown className="h-4 w-4" />
 								</button>
 
@@ -86,8 +93,12 @@ export default function Navbar() {
 											className="relative group/sub border-b border-gray-100 last:border-0 cursor-pointer"
 										>
 											<Link
-												href={`/category/${cat.name.toLowerCase().replace(/ /g, "-")}`}
-												className="flex items-center justify-between px-5 py-3 text-[14px] text-black hover:bg-[#404248] hover:text-[#D4AF37] transition-colors cursor-pointer"
+												href={`/category/${getCategorySlug(cat.name)}`}
+												className={`flex items-center justify-between px-5 py-3 text-[14px] transition-colors cursor-pointer ${
+													isCategoryActive(cat.name)
+														? "text-[#D4AF37] bg-white font-semibold"
+														: "text-black hover:bg-[#404248] hover:text-[#D4AF37]"
+												}`}
 											>
 												{cat.name}
 												{cat.subItems && <ChevronRight className="h-4 w-4" />}
@@ -133,11 +144,6 @@ export default function Navbar() {
 
 					{/* Right Section: Search Bar & Icons */}
 					<div className="flex items-center gap-4 xl:gap-6 px-0 md:px-3 flex-1 justify-end lg:flex-none">
-						{/* Search Bar: 
-                - lg: Fixed width right aligned
-                - md: Full width flexible between logo and icons
-                - sm: rendered below
-            */}
 						<div className="hidden md:flex flex-1 lg:flex-none lg:w-[280px] xl:w-[350px] items-center border border-gray-300 rounded overflow-hidden bg-white focus-within:border-[#68b800] transition mx-4 lg:mx-0">
 							<input
 								type="text"
@@ -242,7 +248,7 @@ export default function Navbar() {
 								<button
 									onClick={() => setIsAllCategoriesOpen(!isAllCategoriesOpen)}
 									className={`w-full flex justify-between items-center p-3 px-4 font-medium text-[15px] border-b border-gray-200 transition-colors cursor-pointer
-                    ${isAllCategoriesOpen ? "bg-[#68b800] text-white" : "bg-white text-black hover:bg-[#68b800] hover:text-white"}
+                    ${isAllCategoriesOpen || isAnyCategoryActive ? "bg-[#68b800] text-white" : "bg-white text-black hover:bg-[#68b800] hover:text-white"}
                   `}
 								>
 									All Categories
@@ -264,15 +270,13 @@ export default function Navbar() {
 														onClick={() => {
 															if (mobileMenuOpen === cat.name) {
 																setIsMenuOpen(false);
-																router.push(
-																	`/category/${cat.name.toLowerCase().replace(/ /g, "-")}`,
-																);
+																router.push(`/category/${getCategorySlug(cat.name)}`);
 															} else {
 																setMobileMenuOpen(cat.name);
 															}
 														}}
 														className={`w-full flex items-center justify-between px-6 py-3 text-left text-[14px] transition-colors cursor-pointer
-                              ${mobileMenuOpen === cat.name ? "bg-[#68b800] text-white" : "bg-white text-black hover:bg-[#68b800] hover:text-white"}
+                              ${mobileMenuOpen === cat.name || isCategoryActive(cat.name) ? "bg-[#68b800] text-white" : "bg-white text-black hover:bg-[#68b800] hover:text-white"}
                             `}
 													>
 														{cat.name}
@@ -282,8 +286,12 @@ export default function Navbar() {
 													</button>
 												) : (
 													<Link
-														href={`/category/${cat.name.toLowerCase().replace(/ /g, "-")}`}
-														className="w-full block px-6 py-3 text-left text-black hover:bg-[#68b800] hover:text-white bg-white text-[14px] transition-colors cursor-pointer"
+														href={`/category/${getCategorySlug(cat.name)}`}
+														className={`w-full block px-6 py-3 text-left text-[14px] transition-colors cursor-pointer ${
+															isCategoryActive(cat.name)
+																? "text-[#D4AF37] font-bold bg-gray-50"
+																: "text-black hover:bg-[#68b800] hover:text-white bg-white"
+														}`}
 														onClick={() => setIsMenuOpen(false)}
 													>
 														{cat.name}
