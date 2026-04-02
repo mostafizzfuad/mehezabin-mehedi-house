@@ -2,12 +2,8 @@
 
 <div align="center">
   <img width="100%" alt="mehezabinmehedi" src="https://github.com/user-attachments/assets/baa7ae7a-46fb-4b0b-bb0c-3ba36fa63c7e" />
-  <br />
-  <br />
-  <img height="400" alt="mehezabinmehedi" src="https://github.com/user-attachments/assets/9201481f-91ce-48df-afb3-6a424780b21a" />
-  <img height="400" alt="mehezabinmehedi" src="https://github.com/user-attachments/assets/adee7a7e-583b-4583-bf52-ad62c61e983b" />
-  <img height="400" alt="mehezabinmehedi" src="https://github.com/user-attachments/assets/ba5889f6-7ffc-4dcf-bb17-2160002cdb4e" />
-  <img height="400" alt="mehezabinmehedi" src="https://github.com/user-attachments/assets/07d1bcb3-aa11-48f3-aeaf-c3b50c04ea17" />
+  <img width="100%" alt="mehezabinmehedi" src="https://github.com/user-attachments/assets/86e331f5-1c1b-4f85-aa8f-61b60de96777" />
+  <img width="100%" alt="mehezabinmehedi" src="https://github.com/user-attachments/assets/565e1e92-2d08-492a-8f33-78f9750d9535" />
 </div>
 <br />
 
